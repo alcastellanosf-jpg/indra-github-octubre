@@ -1,0 +1,301 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #20243a;
+  background: #f2f4ff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: radial-gradient(circle at top left, #e2e8ff, transparent 45%), #f2f4ff;
+}
+
+.tarjeta {
+  width: min(100%, 520px);
+  padding: 56px 40px;
+  text-align: center;
+  background: #fff;
+  border: 1px solid #e8eaf5;
+  border-radius: 24px;
+  box-shadow: 0 20px 60px rgb(45 55 100 / 10%);
+}
+
+.etiqueta {
+  color: #626de0;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 18px 0 12px;
+  font-size: clamp(2.5rem, 8vw, 3.5rem);
+  letter-spacing: -0.06em;
+}
+
+.descripcion {
+  margin: 0;
+  color: #697087;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.mensaje {
+  min-height: 1.5em;
+  margin: 28px 0 22px;
+  color: #424b72;
+  font-weight: 600;
+}
+
+button {
+  padding: 14px 22px;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  background: #626de0;
+  border: 0;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 160ms ease, transform 160ms ease;
+}
+
+button:hover {
+  background: #4f59c9;
+  transform: translateY(-2px);
+}
+
+button:focus-visible {
+  outline: 3px solid #aab0ff;
+  outline-offset: 4px;
+}
+
+.reloj {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 148px;
+  aspect-ratio: 1;
+  padding: 8px;
+  background: repeating-conic-gradient(#626de0 0deg 1.5deg, transparent 1.5deg 30deg);
+  border: 1px solid #dce0f4;
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgb(45 55 100 / 16%);
+}
+
+.esfera {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  border-radius: 50%;
+}
+
+.numero {
+  position: absolute;
+  color: #424b72;
+  font-size: 0.8rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.numero-12 {
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.numero-3 {
+  top: 50%;
+  right: 9px;
+  transform: translateY(-50%);
+}
+
+.numero-6 {
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.numero-9 {
+  top: 50%;
+  left: 9px;
+  transform: translateY(-50%);
+}
+
+.aguja {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  border-radius: 999px;
+  transform: translateX(-50%) rotate(0deg);
+  transform-origin: 50% 100%;
+}
+
+.aguja-hora {
+  z-index: 1;
+  width: 5px;
+  height: 27%;
+  background: #20243a;
+}
+
+.aguja-minuto {
+  z-index: 2;
+  width: 3px;
+  height: 38%;
+  background: #626de0;
+}
+
+.aguja-segundo {
+  z-index: 3;
+  width: 2px;
+  height: 43%;
+  background: #e25f70;
+}
+
+.centro {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  background: #e25f70;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.calculadora {
+  position: fixed;
+  z-index: 5;
+  bottom: 24px;
+  left: 24px;
+  width: 240px;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #e8eaf5;
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgb(45 55 100 / 16%);
+}
+
+.pantalla-calculadora {
+  display: block;
+  overflow: hidden;
+  min-height: 48px;
+  margin-bottom: 10px;
+  padding: 8px 10px;
+  color: #20243a;
+  font-size: 1.6rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  background: #f2f4ff;
+  border-radius: 10px;
+}
+
+.teclas-calculadora {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.tecla {
+  min-width: 0;
+  padding: 10px 4px;
+  color: #20243a;
+  font-size: 1rem;
+  background: #f2f4ff;
+  border-radius: 9px;
+  transition: background-color 160ms ease;
+}
+
+.tecla:hover {
+  color: #fff;
+  background: #626de0;
+  transform: none;
+}
+
+.tecla-secundaria {
+  color: #626de0;
+  background: #e9ebff;
+}
+
+.tecla-operador,
+.tecla-igual {
+  color: #fff;
+  background: #626de0;
+}
+
+.tecla-operador:hover,
+.tecla-igual:hover {
+  background: #4f59c9;
+}
+
+.tecla-igual {
+  grid-column: 4;
+  grid-row: 4 / span 2;
+}
+
+.tecla-cero {
+  grid-column: span 2;
+}
+
+@media (max-width: 480px) {
+  .tarjeta {
+    padding: 42px 24px;
+  }
+
+  .reloj {
+    right: 16px;
+    bottom: 16px;
+    width: 112px;
+  }
+
+  .calculadora {
+    bottom: 16px;
+    left: 16px;
+    width: 200px;
+    padding: 9px;
+  }
+
+  .teclas-calculadora {
+    gap: 4px;
+  }
+
+  .tecla {
+    padding: 8px 3px;
+  }
+}
+
+@media (max-width: 360px) {
+  .reloj {
+    right: 12px;
+    bottom: 12px;
+    width: 88px;
+  }
+
+  .calculadora {
+    bottom: 12px;
+    left: 12px;
+    width: 172px;
+  }
+
+  .pantalla-calculadora {
+    min-height: 40px;
+    font-size: 1.25rem;
+  }
+
+  .tecla {
+    font-size: 0.9rem;
+  }
+}
