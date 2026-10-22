@@ -26,12 +26,23 @@ Abre `index.html` en un navegador moderno. También puedes usar la extensión Li
 
 ```text
 mi-web/
-├── index.html   # Estructura y contenido de la página
-├── styles.css   # Estilos y diseño adaptable
-├── script.js    # Mensajes, reloj y lógica de la calculadora
-└── README.md    # Documentación del proyecto
+├── index.html       # Estructura y contenido de la página
+├── styles.css       # Estilos y diseño adaptable
+├── script.js        # Mensajes, reloj y lógica de la calculadora
+├── package.json     # Comando para ejecutar las pruebas
+├── tests/
+│   └── script.test.js
+└── README.md        # Documentación del proyecto
 ```
 
 ## Desarrollo
 
 La página carga `styles.css` para los estilos y `script.js` con `defer`, de modo que el JavaScript se ejecuta cuando el HTML ya está disponible.
+
+## Pruebas
+
+Las pruebas usan el ejecutor integrado de Node.js y no requieren instalar dependencias. Con Node.js instalado, ejecuta:
+
+```bash
+npm test
+```
