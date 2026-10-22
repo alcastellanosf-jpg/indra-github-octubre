@@ -1,0 +1,12 @@
+name: Saludo en consola
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  saludar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mostrar saludo
+        run: echo "¡Hola desde GitHub Actions!"
