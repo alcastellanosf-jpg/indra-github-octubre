@@ -9,7 +9,17 @@
   <script src="script.js" defer></script>
 </head>
 <body>
-  <main class="tarjeta">
+  <header class="cabecera">
+    <a class="marca" href="#inicio" aria-label="Mi web, ir al inicio">
+      <span class="marca-icono" aria-hidden="true">m</span>
+      <span class="marca-texto">mi web<span class="marca-punto">.</span></span>
+    </a>
+    <nav class="navegacion" aria-label="Navegación principal">
+      <a class="enlace-inicio" href="#inicio" aria-current="page">Inicio</a>
+      <a class="enlace-herramienta" href="#calculadora">Calculadora</a>
+    </nav>
+  </header>
+  <main class="tarjeta" id="inicio">
     <span class="etiqueta">MI PRIMERA WEB</span>
     <h1>¡Hola, mundo!</h1>
     <p class="descripcion">Esta página está hecha con HTML, CSS y JavaScript.</p>
@@ -28,7 +38,7 @@
       <span class="centro"></span>
     </div>
   </aside>
-  <section class="calculadora" aria-label="Calculadora">
+  <section class="calculadora" id="calculadora" aria-label="Calculadora">
     <output class="pantalla-calculadora" id="pantalla-calculadora" aria-live="polite">0</output>
     <div class="teclas-calculadora">
       <button class="tecla tecla-secundaria" type="button" data-accion="limpiar" aria-label="Limpiar">C</button>

@@ -12,14 +12,92 @@
 
 body {
   min-height: 100vh;
+  min-height: 100svh;
   margin: 0;
-  display: grid;
-  place-items: center;
-  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  padding: 22px clamp(16px, 4vw, 48px) 24px;
   background: radial-gradient(circle at top left, #e2e8ff, transparent 45%), #f2f4ff;
 }
 
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  width: min(100%, 960px);
+  min-height: 64px;
+  margin: 0 auto;
+  padding: 10px 14px 10px 18px;
+  background: rgb(255 255 255 / 78%);
+  border: 1px solid rgb(222 226 248 / 90%);
+  border-radius: 18px;
+  box-shadow: 0 8px 28px rgb(45 55 100 / 6%);
+  backdrop-filter: blur(12px);
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #20243a;
+  text-decoration: none;
+}
+
+.marca-icono {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(145deg, #818af0, #5964d5);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgb(98 109 224 / 24%);
+}
+
+.marca-texto {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.marca-punto {
+  color: #626de0;
+}
+
+.navegacion {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navegacion a {
+  padding: 10px 14px;
+  color: #626980;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 11px;
+  transition: color 160ms ease, background-color 160ms ease;
+}
+
+.navegacion a:hover,
+.navegacion .enlace-inicio {
+  color: #535ed0;
+  background: #eef0ff;
+}
+
+.navegacion a:focus-visible,
+.marca:focus-visible {
+  outline: 3px solid #aab0ff;
+  outline-offset: 3px;
+}
+
 .tarjeta {
+  align-self: center;
+  margin: auto 0;
   width: min(100%, 520px);
   padding: 56px 40px;
   text-align: center;
@@ -251,8 +329,38 @@ button:focus-visible {
 }
 
 @media (max-width: 480px) {
+  body {
+    padding: 14px 14px 16px;
+  }
+
+  .cabecera {
+    min-height: 58px;
+    padding: 8px 9px 8px 12px;
+    border-radius: 15px;
+  }
+
+  .marca {
+    gap: 8px;
+  }
+
+  .marca-icono {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+
+  .navegacion {
+    gap: 2px;
+  }
+
+  .navegacion a {
+    padding: 9px 10px;
+    font-size: 0.82rem;
+  }
+
   .tarjeta {
     padding: 42px 24px;
+    margin: 28px 0 clamp(240px, 42vh, 300px);
   }
 
   .reloj {
@@ -274,6 +382,26 @@ button:focus-visible {
 
   .tecla {
     padding: 8px 3px;
+  }
+}
+
+@media (max-width: 480px) and (max-height: 700px) {
+  .tarjeta {
+    margin-top: 18px;
+    padding: 16px 20px;
+  }
+
+  .tarjeta h1 {
+    margin: 12px 0 8px;
+    font-size: clamp(2rem, 8vw, 2.5rem);
+  }
+
+  .tarjeta .mensaje {
+    margin: 14px 0;
+  }
+
+  .tarjeta button {
+    padding: 11px 18px;
   }
 }
 
